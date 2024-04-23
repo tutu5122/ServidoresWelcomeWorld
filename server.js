@@ -16,6 +16,7 @@ app.get('/crear', (req, res) => {
 
     const { archivo,contenido } = req.query
 
+    /// fecha actual para agrega al archivo en formato dd/mm/yyyy
     const fecha = new Date();
     const dia = fecha.getDate().toString().padStart(2, '0');
     const mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
@@ -28,6 +29,8 @@ app.get('/crear', (req, res) => {
     })
 });
 
+
+///// ruta leer crear un archivo
 app.get('/leer', (req, res) => {
 
     const { archivo } = req.query
@@ -42,6 +45,8 @@ app.get('/leer', (req, res) => {
     })
 });
 
+
+///// ruta leer renombrar un archivo
 app.get('/renombrar', (req, res) => {
 
     const { nombre,nuevoNombre } = req.query
@@ -56,6 +61,8 @@ app.get('/renombrar', (req, res) => {
     })
 });
 
+
+///// ruta leer eliminar un archivo
 app.get('/eliminar', (req, res) => {
 
     const { archivo } = req.query
